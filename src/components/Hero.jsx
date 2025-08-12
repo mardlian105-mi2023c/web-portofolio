@@ -1,0 +1,177 @@
+"use client";
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+
+export default function Hero() {
+  const [typedName, setTypedName] = useState("");
+  const [typedGreeting, setTypedGreeting] = useState("");
+  const fullName = "Mardlian";
+  const greeting = "Hello, I'm";
+  const [showContent, setShowContent] = useState(false);
+
+  useEffect(() => {
+    // Greeting typing effect
+    let i = 0;
+    const greetingInterval = setInterval(() => {
+      if (i < greeting.length) {
+        setTypedGreeting(greeting.substring(0, i + 1));
+        i++;
+      } else {
+        clearInterval(greetingInterval);
+        // Start name typing after greeting finishes
+        startNameTyping();
+      }
+    }, 100);
+
+    const startNameTyping = () => {
+      let j = 0;
+      const nameInterval = setInterval(() => {
+        if (j < fullName.length) {
+          setTypedName(fullName.substring(0, j + 1));
+          j++;
+        } else {
+          clearInterval(nameInterval);
+          setShowContent(true);
+        }
+      }, 150);
+    };
+
+    return () => {
+      clearInterval(greetingInterval);
+    };
+  }, []);
+
+  return (
+    <section className="relative h-screen flex items-center justify-center bg-gray-950 overflow-hidden">
+      {/* Background Blobs */}
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.3 }}
+          transition={{ duration: 2 }}
+          className="absolute top-1/4 -left-10 w-64 h-64 rounded-full bg-gradient-to-br from-rose-800 via-fuchsia-900 to-purple-900 blur-3xl animate-pulse"
+        />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.3 }}
+          transition={{ duration: 2, delay: 0.5 }}
+          className="absolute bottom-1/4 -right-10 w-72 h-72 rounded-full bg-gradient-to-tr from-emerald-800 via-teal-900 to-gray-800 blur-3xl animate-pulse"
+        />
+      </div>
+
+      <div className="relative z-10 text-center px-6 max-w-4xl">
+        {/* Greeting with typing effect */}
+        <div className="min-h-[40px] flex items-center justify-center">
+          <h2 className="text-lg text-rose-300 font-mono mb-4 tracking-wide">
+            {typedGreeting}
+            <span className="animate-pulse">|</span>
+          </h2>
+        </div>
+
+        {/* Typing Name */}
+        <div className="min-h-[120px] flex items-center justify-center">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-rose-300 via-white to-emerald-200 tracking-wide">
+            {typedName}
+            {typedName && !showContent && (
+              <span className="animate-pulse">|</span>
+            )}
+          </h1>
+        </div>
+
+        {showContent && (
+          <>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-3xl mx-auto mb-6 font-mono"
+            >
+              I craft{" "}
+              <span className="text-white font-semibold">
+                exceptional interfaces
+              </span>{" "}
+              with{" "}
+              <span className="text-emerald-300 font-semibold">
+                clean architecture
+              </span>{" "}
+              and{" "}
+              <span className="text-rose-300 font-semibold">
+                thoughtful design
+              </span>
+              .
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="text-lg text-gray-400 mb-10 font-mono"
+            >
+              Specialized in{" "}
+              <span className="text-rose-400 font-medium">Laravel</span> &{" "}
+              <span className="text-emerald-300 font-medium">Next.js</span>{" "}
+              applications.
+            </motion.div>
+
+            {/* Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="flex justify-center space-x-4 font-mono"
+            >
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href="#contact"
+                className="px-8 py-3.5 bg-gradient-to-r from-rose-500 to-emerald-500 text-white rounded-lg font-medium shadow-md hover:shadow-lg transition-all"
+              >
+                Contact Me
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href="#work"
+                className="px-8 py-3.5 border border-gray-700 text-gray-300 rounded-lg font-medium hover:bg-gray-800 hover:text-white transition-all"
+              >
+                View Work
+              </motion.a>
+            </motion.div>
+
+            {/* Scroll indicator */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 1 }}
+              className="mt-24"
+            >
+              <div className="flex flex-col items-center space-y-2">
+                <p className="text-xs text-gray-500 tracking-widest font-mono">
+                  SCROLL TO EXPLORE
+                </p>
+                <motion.div
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ repeat: Infinity, duration: 1.5 }}
+                >
+                  <svg
+                    className="w-5 h-5 text-gray-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                    />
+                  </svg>
+                </motion.div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </div>
+    </section>
+  );
+}
