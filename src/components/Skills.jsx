@@ -43,6 +43,28 @@ const Skills = () => {
       ),
     },
     {
+      name: "Python",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          x="0px"
+          y="0px"
+          width="100"
+          height="100"
+          viewBox="0 0 48 48"
+        >
+          <path
+            fill="#0277BD"
+            d="M24.047,5c-1.555,0.005-2.633,0.142-3.936,0.367c-3.848,0.67-4.549,2.077-4.549,4.67V14h9v2H15.22h-4.35c-2.636,0-4.943,1.242-5.674,4.219c-0.826,3.417-0.863,5.557,0,9.125C5.851,32.005,7.294,34,9.931,34h3.632v-5.104c0-2.966,2.686-5.896,5.764-5.896h7.236c2.523,0,5-1.862,5-4.377v-8.586c0-2.439-1.759-4.263-4.218-4.672C27.406,5.359,25.589,4.994,24.047,5z M19.063,9c0.821,0,1.5,0.677,1.5,1.502c0,0.833-0.679,1.498-1.5,1.498c-0.837,0-1.5-0.664-1.5-1.498C17.563,9.68,18.226,9,19.063,9z"
+          ></path>
+          <path
+            fill="#FFC107"
+            d="M23.078,43c1.555-0.005,2.633-0.142,3.936-0.367c3.848-0.67,4.549-2.077,4.549-4.67V34h-9v-2h9.343h4.35c2.636,0,4.943-1.242,5.674-4.219c0.826-3.417,0.863-5.557,0-9.125C41.274,15.995,39.831,14,37.194,14h-3.632v5.104c0,2.966-2.686,5.896-5.764,5.896h-7.236c-2.523,0-5,1.862-5,4.377v8.586c0,2.439,1.759,4.263,4.218,4.672C19.719,42.641,21.536,43.006,23.078,43z M28.063,39c-0.821,0-1.5-0.677-1.5-1.502c0-0.833,0.679-1.498,1.5-1.498c0.837,0,1.5,0.664,1.5,1.498C29.563,38.32,28.899,39,28.063,39z"
+          ></path>
+        </svg>
+      ),
+    },
+    {
       name: "JavaScript",
       icon: (
         <svg viewBox="0 0 32 32" fill="none" className="w-8 h-8">
@@ -252,40 +274,50 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-20 bg-gray-950">
-      <div className="container mx-auto px-6 max-w-6xl">
+    <section id="skills" className="py-16 md:py-20 bg-gray-950">
+      <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-300 to-emerald-300 mb-4 font-mono">
+          <h2 className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-300 to-emerald-300 mb-3 md:mb-4 font-mono">
             Technical Skills
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto font-mono">
+          <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base font-mono">
             The tools and technologies I work with to deliver high-quality
             solutions
           </p>
-          <div className="w-24 h-0.5 bg-gradient-to-r from-rose-500/50 via-purple-500/50 to-emerald-500/50 mx-auto mt-6 rounded-full"></div>
+          <div className="w-20 sm:w-24 h-0.5 bg-gradient-to-r from-rose-500/50 via-purple-500/50 to-emerald-500/50 mx-auto mt-4 md:mt-6 rounded-full"></div>
         </motion.div>
 
         {/* Auto-scrolling marquee container */}
         <div className="overflow-hidden relative group">
           {/* Gradient fade effects */}
-          <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-gray-950 to-transparent z-10"></div>
-          <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-gray-950 to-transparent z-10"></div>
+          <div className="absolute inset-y-0 left-0 w-16 sm:w-24 bg-gradient-to-r from-gray-950 to-transparent z-10"></div>
+          <div className="absolute inset-y-0 right-0 w-16 sm:w-24 bg-gradient-to-l from-gray-950 to-transparent z-10"></div>
 
           <motion.div
-            className="flex space-x-6"
+            className="flex space-x-4 sm:space-x-6"
             initial={{ x: 0 }}
             animate={{ x: "-50%" }}
             transition={{
               ease: "linear",
-              duration: 20,
+              duration: 15, // Faster on all devices
               repeat: Infinity,
+            }}
+            // Faster speed on mobile
+            variants={{
+              mobile: {
+                transition: {
+                  ease: "linear",
+                  duration: 10,
+                  repeat: Infinity,
+                },
+              },
             }}
           >
             {[...skills, ...skills].map((skill, index) => (
@@ -296,12 +328,12 @@ const Skills = () => {
                   boxShadow:
                     "0 10px 15px -3px rgba(236, 72, 153, 0.1), 0 4px 6px -2px rgba(16, 185, 129, 0.1)",
                 }}
-                className="min-w-[150px] flex-shrink-0 bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-rose-400/50 shadow-lg hover:shadow-rose-500/10 transition-all duration-300 h-full flex flex-col items-center"
+                className="min-w-[120px] sm:min-w-[150px] flex-shrink-0 bg-gray-900 rounded-xl p-4 sm:p-6 border border-gray-800 hover:border-rose-400/50 shadow-lg hover:shadow-rose-500/10 transition-all duration-300 h-full flex flex-col items-center"
               >
-                <div className="w-12 h-12 mb-4 flex items-center justify-center text-2xl">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 mb-3 sm:mb-4 flex items-center justify-center text-xl sm:text-2xl">
                   {skill.icon}
                 </div>
-                <h3 className="font-medium text-gray-200 text-center font-mono">
+                <h3 className="font-medium text-gray-200 text-sm sm:text-base text-center font-mono">
                   {skill.name}
                 </h3>
               </motion.div>

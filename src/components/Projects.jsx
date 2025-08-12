@@ -15,9 +15,9 @@ export default function Projects() {
         "Data Visualisasi",
         "Frontend Development",
       ],
-      image: "../assets/proyek1.png", // Ganti dengan path gambar proyek Anda
-      github: "#", // Tambahkan link repository GitHub Anda jika tersedia
-      demo: "https://seismonesia.vercel.app/", // Ganti dengan URL live demo website Anda jika sudah di-deploy
+      image: "../assets/proyek1.png",
+      github: "#",
+      demo: "https://seismonesia.vercel.app/",
     },
     {
       title: "Mental Care",
@@ -31,40 +31,46 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-28 px-6 bg-gray-950">
+    <section id="projects" className="py-16 sm:py-20 px-4 sm:px-6 bg-gray-950">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="text-center mb-20"
+          viewport={{ once: true, margin: "-50px" }}
+          className="text-center mb-12 sm:mb-16 md:mb-20"
         >
-          <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-300 to-emerald-300 mb-4 font-mono">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-300 to-emerald-300 mb-2 sm:mb-3 md:mb-4 font-mono">
             Featured Projects
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto font-mono">
+          <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-md sm:max-w-xl md:max-w-2xl mx-auto font-mono px-2 sm:px-0">
             A selection of my recent work showcasing fullstack capabilities and
             design sensibility
           </p>
-          <div className="w-24 h-0.5 bg-gradient-to-r from-rose-500/50 via-purple-500/50 to-emerald-500/50 mx-auto mt-6 rounded-full"></div>
+          <div className="w-16 sm:w-20 md:w-24 h-0.5 bg-gradient-to-r from-rose-500/50 via-purple-500/50 to-emerald-500/50 mx-auto mt-4 sm:mt-5 md:mt-6 rounded-full"></div>
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -10 }}
-              className="relative group overflow-hidden rounded-2xl bg-gray-900/50 border border-gray-800 hover:border-rose-400/30 transition-all duration-500 shadow-lg hover:shadow-rose-500/10"
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+                type: "spring",
+                damping: 10,
+                stiffness: 100,
+              }}
+              viewport={{ once: true, margin: "-50px" }}
+              whileHover={{ y: -5 }}
+              className="relative group overflow-hidden rounded-xl sm:rounded-2xl bg-gray-900/50 border border-gray-800 hover:border-rose-400/30 transition-all duration-500 shadow-lg hover:shadow-rose-500/10"
             >
               {/* Project image */}
-              <div className="h-72 overflow-hidden relative">
+              <div className="h-48 sm:h-56 md:h-64 lg:h-72 overflow-hidden relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-rose-900/20 to-emerald-900/20 group-hover:opacity-80 transition-opacity duration-500 z-10"></div>
                 <img
                   src={project.image}
@@ -75,21 +81,21 @@ export default function Projects() {
               </div>
 
               {/* Project content */}
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-rose-300 mb-2 group-hover:text-rose-200 transition-colors font-mono">
+              <div className="p-4 sm:p-5 md:p-6">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-rose-300 mb-1 sm:mb-2 group-hover:text-rose-200 transition-colors font-mono">
                   {project.title}
                 </h3>
-                <p className="text-gray-300 mb-5 leading-relaxed font-mono">
+                <p className="text-xs sm:text-sm md:text-base text-gray-300 mb-3 sm:mb-4 md:mb-5 leading-relaxed font-mono">
                   {project.description}
                 </p>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-1 sm:gap-2 mb-4 sm:mb-5 md:mb-6">
                   {project.tags.map((tag, i) => (
                     <motion.span
                       key={i}
                       whileHover={{ scale: 1.05 }}
-                      className="px-3 py-1 text-xs rounded-full bg-gray-800 text-emerald-300 hover:bg-emerald-900/30 transition-colors font-mono"
+                      className="px-2 py-0.5 sm:px-3 sm:py-1 text-[10px] xs:text-xs rounded-full bg-gray-800 text-emerald-300 hover:bg-emerald-900/30 transition-colors font-mono"
                     >
                       {tag}
                     </motion.span>
@@ -97,15 +103,15 @@ export default function Projects() {
                 </div>
 
                 {/* Action buttons */}
-                <div className="flex space-x-3">
+                <div className="flex flex-col xs:flex-row gap-2 sm:gap-3">
                   <motion.a
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
                     href={project.github}
-                    className="flex items-center px-4 py-2 rounded-lg bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white transition-colors font-mono"
+                    className="flex items-center justify-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white transition-colors font-mono text-xs sm:text-sm"
                   >
                     <svg
-                      className="w-4 h-4 mr-2"
+                      className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
@@ -118,13 +124,13 @@ export default function Projects() {
                     Code
                   </motion.a>
                   <motion.a
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
                     href={project.demo}
-                    className="flex items-center px-4 py-2 rounded-lg bg-gradient-to-r from-rose-500 to-emerald-500 text-white hover:from-rose-600 hover:to-emerald-600 transition-all font-mono"
+                    className="flex items-center justify-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg bg-gradient-to-r from-rose-500 to-emerald-500 text-white hover:from-rose-600 hover:to-emerald-600 transition-all font-mono text-xs sm:text-sm"
                   >
                     <svg
-                      className="w-4 h-4 mr-2"
+                      className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -149,37 +155,6 @@ export default function Projects() {
             </motion.div>
           ))}
         </div>
-
-        {/* View All Button */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <motion.a
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            href="#"
-            className="inline-flex items-center px-6 py-3 border border-rose-500/50 text-rose-300 rounded-full hover:bg-rose-500/10 hover:border-rose-400/70 hover:text-rose-200 transition-all duration-300 font-mono"
-          >
-            View All Projects
-            <svg
-              className="w-4 h-4 ml-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M14 5l7 7m0 0l-7 7m7-7H3"
-              />
-            </svg>
-          </motion.a>
-        </motion.div>
       </div>
     </section>
   );

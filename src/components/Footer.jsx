@@ -20,13 +20,13 @@ export default function Footer() {
     },
     {
       icon: <FaTwitter />,
-      href: "https://twitter.com",
+      href: "https://www.instagram.com/mrdlyand/#",
       label: "Twitter",
       color: "hover:text-blue-400",
     },
     {
       icon: <FaInstagram />,
-      href: "https://instagram.com",
+      href: "https://www.instagram.com/mrdlyand/#",
       label: "Instagram",
       color: "hover:text-purple-400",
     },

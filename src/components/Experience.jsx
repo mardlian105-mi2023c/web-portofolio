@@ -31,7 +31,7 @@ export default function Experience() {
       company: "Digitalent Komidigi",
       period: "2024",
       description:
-        "Peserta beasiswa intensif web development yang diselenggarakan oleh Digitalent Komidigi. Mempelajari dan menerapkan teknologi modern untuk full-stack web development. Mengerjakan proyek individu dan tim untuk membangun aplikasi fungsional, dari konsep UI/UX hingga implementasi back-end.",
+        "Peserta pelatihan intensif web development yang diselenggarakan oleh Digitalent Komdigi. Mempelajari dan menerapkan teknologi modern untuk full-stack web development. Mengerjakan proyek individu dan tim untuk membangun aplikasi fungsional, dari konsep UI/UX hingga implementasi back-end.",
       tags: [
         "Fullstack",
         "Web Development",
@@ -62,7 +62,7 @@ export default function Experience() {
       company: "Dicoding & Accenture Indonesia",
       period: "2025",
       description:
-        "Peserta terpilih dalam program Asah, kolaborasi antara Dicoding dan Accenture Indonesia. Berfokus pada pengembangan web menggunakan React untuk front-end dan teknologi backend modern. Mempelajari implementasi AI dasar untuk fitur-fitur aplikasi dan berkolaborasi dalam tim untuk membangun proyek akhir.",
+        "Selected participant in the Asah Scholarship program, a collaboration between Dicoding and Accenture Indonesia. Focused on web development using React for the front-end and modern back-end technologies. Learned basic AI implementation for application features, Gen AI on AWS, and collaborated in a team to build a final project. In this program, I also learned about the cloud, databases with Amazon RDS, and basic AI implementation.",
       tags: [
         "React",
         "Node.js",
@@ -70,6 +70,10 @@ export default function Experience() {
         "AI",
         "Team Collaboration",
         "API Development",
+        "AWS",
+        "Cloud",
+        "Amazon RDS",
+        "Generative AI",
       ],
       icon: (
         <svg
@@ -151,20 +155,21 @@ export default function Experience() {
   ];
 
   return (
-    <section id="journey" className="py-20 px-6 bg-gray-950">
+    <section id="journey" className="py-16 md:py-20 px-4 sm:px-6 bg-gray-950">
       <div className="max-w-5xl mx-auto">
+        {/* Heading */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
+          viewport={{ once: true, margin: "-50px" }}
+          className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-300 to-emerald-300 mb-3 font-mono">
+          <h2 className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-300 to-emerald-300 mb-3 font-mono">
             My Development Journey
           </h2>
-          <div className="w-20 h-0.5 bg-gradient-to-r from-rose-500/50 via-purple-500/50 to-emerald-500/50 mx-auto mb-6"></div>
-          <p className="text-gray-400 max-w-2xl mx-auto font-mono">
+          <div className="w-16 sm:w-20 h-0.5 bg-gradient-to-r from-rose-500/50 via-purple-500/50 to-emerald-500/50 mx-auto mb-4 sm:mb-6" />
+          <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base px-4 font-mono">
             The evolution of my skills and experience as a fullstack developer
           </p>
         </motion.div>
@@ -174,27 +179,33 @@ export default function Experience() {
           <motion.div
             initial={{ height: 0 }}
             whileInView={{ height: "100%" }}
-            transition={{ duration: 1, ease: "circOut" }}
-            viewport={{ once: true }}
-            className="absolute left-6 top-0 w-px bg-gradient-to-b from-gray-800 via-gray-600 to-gray-800"
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="absolute left-3 sm:left-6 top-0 w-0.5 bg-gradient-to-b from-gray-800 via-gray-600 to-gray-800"
           />
 
-          <div className="space-y-10">
+          <div className="space-y-8 sm:space-y-10">
             {journey.map((step, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 50, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 whileHover={{ y: -5 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="relative pl-16 group"
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.1,
+                  type: "spring",
+                  damping: 10,
+                  stiffness: 100,
+                }}
+                viewport={{ once: true, margin: "-50px" }}
+                className="relative pl-10 sm:pl-16 group"
               >
                 {/* Animated Timeline dot */}
                 <motion.div
                   whileHover={{ scale: 1.2, rotate: 45 }}
                   transition={{ type: "spring", stiffness: 400 }}
-                  className="absolute left-0 top-1 flex items-center justify-center w-6 h-6 rounded-full bg-gray-950 border-2 border-rose-400/80 z-10"
+                  className="absolute left-0 top-1 flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-gray-950 border-2 border-rose-400/80 z-10"
                 >
                   <motion.div
                     animate={{
@@ -210,13 +221,13 @@ export default function Experience() {
                   />
                 </motion.div>
 
-                {/* Experience card with fluid hover effects */}
+                {/* Experience card */}
                 <motion.div
                   whileHover={{
                     borderColor: "rgba(236, 72, 153, 0.5)",
                     boxShadow: "0 10px 25px -5px rgba(236, 72, 153, 0.1)",
                   }}
-                  className="bg-gray-900 p-6 rounded-lg border border-gray-800 shadow-lg transition-all duration-300 relative overflow-hidden"
+                  className="bg-gray-900 p-5 sm:p-6 rounded-lg border border-gray-800 shadow-lg transition-all duration-300 relative overflow-hidden"
                 >
                   {/* Gradient overlay on hover */}
                   <motion.div
@@ -226,7 +237,7 @@ export default function Experience() {
                   />
 
                   <div className="relative z-10">
-                    <div className="flex items-start justify-between">
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
                       <div>
                         <motion.h3
                           whileHover={{
@@ -235,19 +246,19 @@ export default function Experience() {
                             backgroundClip: "text",
                             color: "transparent",
                           }}
-                          className="text-xl font-semibold text-gray-100 mb-1 font-mono"
+                          className="text-lg sm:text-xl font-semibold text-gray-100 mb-1 font-mono"
                         >
                           {step.title}
                         </motion.h3>
-                        <div className="flex flex-wrap items-center text-gray-400 text-sm mb-4 gap-y-1 gap-x-4 font-mono">
+                        <div className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center text-gray-400 text-xs sm:text-sm gap-y-1 gap-x-4 font-mono">
                           {step.company && (
                             <motion.span
                               whileHover={{ color: "#f472b6" }}
-                              className="flex items-center transition-colors"
+                              className="flex items-center transition-colors mb-1 sm:mb-0"
                             >
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="h-4 w-4 mr-1 text-rose-400"
+                                className="h-3 w-3 sm:h-4 sm:w-4 mr-1 text-rose-400"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
@@ -268,7 +279,7 @@ export default function Experience() {
                           >
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
-                              className="h-4 w-4 mr-1 text-emerald-400"
+                              className="h-3 w-3 sm:h-4 sm:w-4 mr-1 text-emerald-400"
                               fill="none"
                               viewBox="0 0 24 24"
                               stroke="currentColor"
@@ -291,15 +302,15 @@ export default function Experience() {
                           background:
                             "linear-gradient(135deg, rgba(236, 72, 153, 0.7), rgba(52, 211, 153, 0.7))",
                         }}
-                        className="p-2 rounded-md bg-gradient-to-br from-rose-900/50 to-emerald-900/50 text-rose-300 transition-all"
+                        className="p-1 sm:p-2 rounded-md bg-gradient-to-br from-rose-900/50 to-emerald-900/50 text-rose-300 transition-all self-start sm:self-auto"
                       >
                         {step.icon}
                       </motion.div>
                     </div>
 
                     <motion.p
-                      whileHover={{ x: 5 }}
-                      className="text-gray-300 mb-6 leading-relaxed font-mono transition-all"
+                      whileHover={{ x: 3 }}
+                      className="text-gray-300 text-sm sm:text-base text-justify my-4 sm:my-6 leading-relaxed font-mono transition-all"
                     >
                       {step.description}
                     </motion.p>
@@ -315,7 +326,7 @@ export default function Experience() {
                             color: "#fff",
                           }}
                           transition={{ type: "spring", stiffness: 300 }}
-                          className="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300 font-mono cursor-default"
+                          className="px-2 py-0.5 sm:px-3 sm:py-1 text-xs rounded-full bg-gray-800 text-gray-300 font-mono cursor-default"
                         >
                           {tag}
                         </motion.span>
