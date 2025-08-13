@@ -31,7 +31,7 @@ export default function Contact() {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-6 h-6"
+          className="w-5 h-5 md:w-6 md:h-6"
         >
           <path
             strokeLinecap="round"
@@ -52,7 +52,7 @@ export default function Contact() {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-6 h-6"
+          className="w-5 h-5 md:w-6 md:h-6"
         >
           <path
             strokeLinecap="round"
@@ -73,7 +73,7 @@ export default function Contact() {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-6 h-6"
+          className="w-5 h-5 md:w-6 md:h-6"
         >
           <path
             strokeLinecap="round"
@@ -99,14 +99,14 @@ export default function Contact() {
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5"
+          className="h-4 w-4 md:h-5 md:w-5"
           fill="currentColor"
           viewBox="0 0 24 24"
         >
           <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
         </svg>
       ),
-      href: "https://github.com/yourusername",
+      href: "https://github.com/mardlian105-mi2023c",
       color: "hover:bg-gray-800 hover:text-white",
     },
     {
@@ -114,7 +114,7 @@ export default function Contact() {
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5"
+          className="h-4 w-4 md:h-5 md:w-5"
           fill="currentColor"
           viewBox="0 0 24 24"
         >
@@ -129,7 +129,7 @@ export default function Contact() {
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5"
+          className="h-4 w-4 md:h-5 md:w-5"
           fill="currentColor"
           viewBox="0 0 24 24"
         >
@@ -178,7 +178,7 @@ export default function Contact() {
       return {
         role: "bot",
         content:
-          "You can contact Mardlian through:\n- Email: mardlian@example.com\n- Phone: +62 812 3456 7890\n- LinkedIn: linkedin.com/in/mardlian\nOr use the contact cards above for quick access!",
+          "You can contact Mardlian through:\n- Email: mmardliannurofiq@gmail.com\n- WhatsApp: +62 857 9163 5708\n- LinkedIn: linkedin.com/in/mardlian\nOr use the contact cards above for quick access!",
       };
     } else if (
       lowerMessage.includes("social") ||
@@ -190,7 +190,7 @@ export default function Contact() {
       return {
         role: "bot",
         content:
-          "Mardlian is active on these platforms:\n- GitHub: github.com/yourusername\n- LinkedIn: linkedin.com/in/mardlian\n- Twitter: twitter.com/yourusername\nCheck the social links section above to connect!",
+          "Mardlian is active on these platforms:\n- GitHub: https://github.com/mardlian105-mi2023c\n- LinkedIn: linkedin.com/in/mardlian\n- Twitter: https://www.instagram.com/mrdlyand/\nCheck the social links section above to connect!",
       };
     } else if (
       lowerMessage.includes("experience") ||
@@ -228,14 +228,17 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-28 px-6 bg-gray-950 relative">
+    <section
+      id="contact"
+      className="py-16 md:py-28 px-4 sm:px-6 bg-gray-950 relative"
+    >
       <div className="max-w-6xl mx-auto">
         {/* Floating Chat Button */}
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => setIsChatOpen(!isChatOpen)}
-          className={`fixed bottom-8 right-8 z-50 p-4 rounded-full shadow-lg ${
+          className={`fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 p-3 md:p-4 rounded-full shadow-lg ${
             isChatOpen
               ? "bg-rose-600"
               : "bg-gradient-to-br from-rose-500 to-emerald-500"
@@ -244,7 +247,7 @@ export default function Contact() {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-8 w-8"
+            className="h-6 w-6 md:h-8 md:w-8"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -263,15 +266,15 @@ export default function Contact() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="fixed bottom-24 right-8 w-80 bg-gray-900 rounded-lg shadow-xl border border-gray-800 flex flex-col z-50 overflow-hidden"
+            className="fixed bottom-20 right-4 left-4 sm:left-auto sm:right-6 w-auto sm:w-80 bg-gray-900 rounded-lg shadow-xl border border-gray-800 flex flex-col z-50 overflow-hidden"
           >
             {/* Chat Header */}
-            <div className="bg-gradient-to-r from-rose-900/50 to-emerald-900/50 p-4 border-b border-gray-800">
+            <div className="bg-gradient-to-r from-rose-900/50 to-emerald-900/50 p-3 md:p-4 border-b border-gray-800">
               <div className="flex items-center space-x-2">
-                <div className="p-2 bg-gradient-to-br from-rose-500 to-emerald-500 rounded-full">
+                <div className="p-1 md:p-2 bg-gradient-to-br from-rose-500 to-emerald-500 rounded-full">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 text-white"
+                    className="h-4 w-4 md:h-5 md:w-5 text-white"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -284,14 +287,14 @@ export default function Contact() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-lg font-medium text-white font-mono">
+                <h3 className="text-base md:text-lg font-medium text-white font-mono">
                   Contact Assistant
                 </h3>
               </div>
             </div>
 
             {/* Chat Messages */}
-            <div className="flex-1 p-4 overflow-y-auto max-h-96">
+            <div className="flex-1 p-3 md:p-4 overflow-y-auto max-h-64 md:max-h-96">
               {chatMessages.map((message, index) => (
                 <motion.div
                   key={index}
@@ -300,16 +303,16 @@ export default function Contact() {
                     x: message.role === "user" ? 20 : -20,
                   }}
                   animate={{ opacity: 1, x: 0 }}
-                  className={`mb-4 flex ${
+                  className={`mb-3 md:mb-4 flex ${
                     message.role === "user" ? "justify-end" : "justify-start"
                   }`}
                 >
                   <div
-                    className={`max-w-xs rounded-lg px-4 py-2 ${
+                    className={`max-w-xs rounded-lg px-3 py-1 md:px-4 md:py-2 ${
                       message.role === "user"
                         ? "bg-rose-600/20 text-white"
                         : "bg-gray-800/80 text-gray-300"
-                    } font-mono text-sm`}
+                    } font-mono text-xs md:text-sm`}
                   >
                     {message.content.split("\n").map((line, i) => (
                       <p key={i}>{line}</p>
@@ -323,7 +326,7 @@ export default function Contact() {
             {/* Chat Input */}
             <form
               onSubmit={handleSendMessage}
-              className="p-4 border-t border-gray-800"
+              className="p-3 md:p-4 border-t border-gray-800"
             >
               <div className="flex">
                 <input
@@ -331,11 +334,11 @@ export default function Contact() {
                   value={inputMessage}
                   onChange={(e) => setInputMessage(e.target.value)}
                   placeholder="Ask about contact info..."
-                  className="flex-1 bg-gray-800 text-white text-sm rounded-l-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-rose-500/50 font-mono"
+                  className="flex-1 bg-gray-800 text-white text-xs md:text-sm rounded-l-lg px-3 md:px-4 py-2 focus:outline-none focus:ring-2 focus:ring-rose-500/50 font-mono"
                 />
                 <button
                   type="submit"
-                  className="bg-gradient-to-br from-rose-500 to-emerald-500 text-white px-4 py-2 rounded-r-lg hover:opacity-90 transition-opacity font-mono text-sm"
+                  className="bg-gradient-to-br from-rose-500 to-emerald-500 text-white px-3 md:px-4 py-2 rounded-r-lg hover:opacity-90 transition-opacity font-mono text-xs md:text-sm"
                 >
                   Send
                 </button>
@@ -350,21 +353,21 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-12 md:mb-20"
         >
-          <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-300 to-emerald-300 mb-4 font-mono">
+          <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-300 to-emerald-300 mb-3 md:mb-4 font-mono">
             Let's Connect
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto font-mono">
+          <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto px-2 font-mono">
             Whether you have a project in mind or just want to chat about tech,
             I'd love to hear from you!
           </p>
-          <div className="w-24 h-0.5 bg-gradient-to-r from-rose-500/50 via-purple-500/50 to-emerald-500/50 mx-auto mt-6 rounded-full"></div>
+          <div className="w-24 h-0.5 bg-gradient-to-r from-rose-500/50 via-purple-500/50 to-emerald-500/50 mx-auto mt-4 md:mt-6 rounded-full"></div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {/* Contact methods */}
-          <div className="space-y-6">
+          <div className="space-y-4 md:space-y-6">
             {contactMethods.map((method, index) => (
               <motion.a
                 key={index}
@@ -375,22 +378,22 @@ export default function Contact() {
                 href={method.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-start space-x-4 p-6 rounded-xl bg-gray-900/50 border border-gray-800 hover:border-rose-400/30 transition-all duration-300 hover:shadow-lg hover:shadow-rose-500/10"
+                className="group flex items-start space-x-3 md:space-x-4 p-4 md:p-6 rounded-xl bg-gray-900/50 border border-gray-800 hover:border-rose-400/30 transition-all duration-300 hover:shadow-lg hover:shadow-rose-500/10"
               >
-                <div className="p-3 rounded-lg bg-gradient-to-br from-rose-900/30 to-emerald-900/30 text-rose-400 group-hover:from-rose-700/30 group-hover:to-emerald-700/30 transition-colors">
+                <div className="p-2 md:p-3 rounded-lg bg-gradient-to-br from-rose-900/30 to-emerald-900/30 text-rose-400 group-hover:from-rose-700/30 group-hover:to-emerald-700/30 transition-colors">
                   {method.icon}
                 </div>
                 <div>
-                  <h3 className="text-lg font-medium text-gray-300 group-hover:text-rose-300 transition-colors font-mono">
+                  <h3 className="text-base md:text-lg font-medium text-gray-300 group-hover:text-rose-300 transition-colors font-mono">
                     {method.title}
                   </h3>
-                  <p className="text-emerald-400/90 group-hover:text-emerald-300 transition-colors font-mono">
+                  <p className="text-sm md:text-base text-emerald-400/90 group-hover:text-emerald-300 transition-colors font-mono">
                     {method.value}
                   </p>
                 </div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 ml-auto text-gray-500 group-hover:text-rose-400 transition-colors"
+                  className="h-4 w-4 md:h-5 md:w-5 ml-auto text-gray-500 group-hover:text-rose-400 transition-colors"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
@@ -409,12 +412,12 @@ export default function Contact() {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.3 }}
               viewport={{ once: true }}
-              className="pt-6"
+              className="pt-4 md:pt-6"
             >
-              <h4 className="text-lg font-medium text-gray-300 mb-4 font-mono">
+              <h4 className="text-base md:text-lg font-medium text-gray-300 mb-3 md:mb-4 font-mono">
                 Follow Me
               </h4>
-              <div className="flex space-x-4">
+              <div className="flex space-x-3 md:space-x-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
                     key={index}
@@ -423,7 +426,7 @@ export default function Contact() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`p-3 rounded-full bg-gray-800 text-gray-400 ${social.color} transition-all duration-300`}
+                    className={`p-2 md:p-3 rounded-full bg-gray-800 text-gray-400 ${social.color} transition-all duration-300`}
                     aria-label={social.name}
                   >
                     {social.icon}
@@ -439,18 +442,18 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            className="bg-gray-900/50 border border-gray-800 rounded-xl p-8"
+            className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 md:p-8"
           >
-            <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-300 to-emerald-300 mb-6 font-mono">
+            <h3 className="text-xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-300 to-emerald-300 mb-4 md:mb-6 font-mono">
               My Experience
             </h3>
 
-            <div className="space-y-6">
+            <div className="space-y-4 md:space-y-6">
               <div className="flex items-start">
-                <div className="p-2 bg-gradient-to-br from-rose-900/30 to-emerald-900/30 rounded-lg text-rose-400 mr-4">
+                <div className="p-1 md:p-2 bg-gradient-to-br from-rose-900/30 to-emerald-900/30 rounded-lg text-rose-400 mr-3 md:mr-4">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
+                    className="h-5 w-5 md:h-6 md:w-6"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -464,20 +467,20 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-lg font-medium text-gray-300 mb-1 font-mono">
+                  <h4 className="text-base md:text-lg font-medium text-gray-300 mb-1 font-mono">
                     Years of Experience
                   </h4>
-                  <p className="text-emerald-400/90 font-mono">
+                  <p className="text-sm md:text-base text-emerald-400/90 font-mono">
                     {experienceData.years}
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start">
-                <div className="p-2 bg-gradient-to-br from-rose-900/30 to-emerald-900/30 rounded-lg text-rose-400 mr-4">
+                <div className="p-1 md:p-2 bg-gradient-to-br from-rose-900/30 to-emerald-900/30 rounded-lg text-rose-400 mr-3 md:mr-4">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
+                    className="h-5 w-5 md:h-6 md:w-6"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -491,14 +494,14 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-lg font-medium text-gray-300 mb-1 font-mono">
+                  <h4 className="text-base md:text-lg font-medium text-gray-300 mb-1 font-mono">
                     Specialties
                   </h4>
-                  <div className="flex flex-wrap gap-2 mt-2">
+                  <div className="flex flex-wrap gap-1 md:gap-2 mt-1 md:mt-2">
                     {experienceData.specialties.map((tech, index) => (
                       <span
                         key={index}
-                        className="px-3 py-1 bg-gray-800/50 text-emerald-300 rounded-full text-xs font-mono"
+                        className="px-2 py-0.5 md:px-3 md:py-1 bg-gray-800/50 text-emerald-300 rounded-full text-xs font-mono"
                       >
                         {tech}
                       </span>
@@ -508,10 +511,10 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start">
-                <div className="p-2 bg-gradient-to-br from-rose-900/30 to-emerald-900/30 rounded-lg text-rose-400 mr-4">
+                <div className="p-1 md:p-2 bg-gradient-to-br from-rose-900/30 to-emerald-900/30 rounded-lg text-rose-400 mr-3 md:mr-4">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
+                    className="h-5 w-5 md:h-6 md:w-6"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -525,20 +528,20 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-lg font-medium text-gray-300 mb-1 font-mono">
+                  <h4 className="text-base md:text-lg font-medium text-gray-300 mb-1 font-mono">
                     Projects Completed
                   </h4>
-                  <p className="text-emerald-400/90 font-mono">
+                  <p className="text-sm md:text-base text-emerald-400/90 font-mono">
                     {experienceData.projects}
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start">
-                <div className="p-2 bg-gradient-to-br from-rose-900/30 to-emerald-900/30 rounded-lg text-rose-400 mr-4">
+                <div className="p-1 md:p-2 bg-gradient-to-br from-rose-900/30 to-emerald-900/30 rounded-lg text-rose-400 mr-3 md:mr-4">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
+                    className="h-5 w-5 md:h-6 md:w-6"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -552,10 +555,10 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-lg font-medium text-gray-300 mb-1 font-mono">
+                  <h4 className="text-base md:text-lg font-medium text-gray-300 mb-1 font-mono">
                     Client Types
                   </h4>
-                  <p className="text-emerald-400/90 font-mono">
+                  <p className="text-sm md:text-base text-emerald-400/90 font-mono">
                     {experienceData.clients}
                   </p>
                 </div>

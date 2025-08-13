@@ -38,10 +38,10 @@ export default function Footer() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className="bg-gray-950/80 backdrop-blur-sm py-12 border-t border-gray-800"
+      className="bg-gray-950/80 backdrop-blur-sm py-8 sm:py-10 lg:py-12 border-t border-gray-800"
     >
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
           {/* Logo and tagline */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -52,11 +52,11 @@ export default function Footer() {
           >
             <Link
               href="#home"
-              className="text-2xl font-bold bg-gradient-to-r from-rose-300 to-emerald-300 bg-clip-text text-transparent font-mono"
+              className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-rose-300 to-emerald-300 bg-clip-text text-transparent font-mono"
             >
               Mardlian
             </Link>
-            <p className="text-gray-400 mt-2 font-mono">
+            <p className="text-gray-400 mt-2 font-mono text-sm sm:text-base">
               Building digital experiences that matter
             </p>
           </motion.div>
@@ -67,7 +67,7 @@ export default function Footer() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            className="flex space-x-6"
+            className="flex justify-center md:justify-end space-x-4 sm:space-x-6"
           >
             {socialLinks.map((social, index) => (
               <motion.a
@@ -77,7 +77,7 @@ export default function Footer() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`text-gray-400 ${social.color} transition-all duration-300 text-xl`}
+                className={`text-gray-400 ${social.color} transition-all duration-300 text-lg sm:text-xl`}
                 aria-label={social.label}
               >
                 {social.icon}
@@ -92,7 +92,7 @@ export default function Footer() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}
           viewport={{ once: true }}
-          className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 font-mono"
+          className="border-t border-gray-800 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center text-gray-500 font-mono text-xs sm:text-sm"
         >
           <p>&copy; {currentYear} Mardlian. All rights reserved.</p>
         </motion.div>
