@@ -310,7 +310,7 @@ export default function Experience() {
 
                     <motion.p
                       whileHover={{ x: 3 }}
-                      className="text-gray-300 text-sm sm:text-base text-justify my-4 sm:my-6 leading-relaxed font-mono transition-all"
+                      className="text-gray-300 text-sm sm:text-base my-4 sm:my-6 leading-relaxed font-mono transition-all"
                     >
                       {step.description}
                     </motion.p>

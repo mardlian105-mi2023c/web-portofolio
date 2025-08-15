@@ -177,7 +177,7 @@ export default function Hero() {
                   backgroundColor: "rgba(255, 255, 255, 0.05)",
                 }}
                 whileTap={{ scale: 0.98 }}
-                href="#work"
+                href="#journey"
                 className="relative px-8 py-3.5 rounded-lg font-medium transition-all overflow-hidden"
                 style={{
                   backgroundColor: "rgba(255, 255, 255, 0.02)",
