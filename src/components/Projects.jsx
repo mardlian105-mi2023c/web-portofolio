@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 export default function Projects() {
   const projects = [
     {
-      title: "Sesimonesia - Informasi Gempa Dunia",
+      title: "Seismonesia - Website Pemetaan Informasi Gempa Dunia",
       description:
-        "Sebuah website informatif yang menampilkan data gempa bumi terkini di seluruh dunia. Dibangun menggunakan React untuk antarmuka dinamis dan Tailwind CSS untuk styling yang responsif. Data gempa diperoleh melalui API dari USGS (United States Geological Survey).",
+        "This is an informative web application built to display real-time earthquake data from around the globe. It leverages React to create a dynamic and responsive user interface, with Tailwind CSS for sleek, utility-first styling. The application fetches up-to-the-minute earthquake information directly from the USGS (United States Geological Survey) API, ensuring the data is accurate and constantly updated",
       tags: [
         "React",
         "Tailwind CSS",

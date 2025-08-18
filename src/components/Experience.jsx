@@ -31,7 +31,7 @@ export default function Experience() {
       company: "Digitalent Komidigi",
       period: "2024",
       description:
-        "Peserta pelatihan intensif web development yang diselenggarakan oleh Digitalent Komdigi. Mempelajari dan menerapkan teknologi modern untuk full-stack web development. Mengerjakan proyek individu dan tim untuk membangun aplikasi fungsional, dari konsep UI/UX hingga implementasi back-end.",
+        "This intensive program was a deep dive into modern web development, where I honed my skills in full-stack engineering. I took on individual and team-based projects, building functional applications from the ground up, tackling everything from UI/UX design and front-end development to robust back-end implementation. This experience has equipped me with the practical knowledge to deliver end-to-end web solutions.",
       tags: [
         "Fullstack",
         "Web Development",
@@ -58,7 +58,7 @@ export default function Experience() {
       ),
     },
     {
-      title: "React & Backend with AI Program",
+      title: "React & Backend with AI Program Asah",
       company: "Dicoding & Accenture Indonesia",
       period: "2025",
       description:
