@@ -42,7 +42,7 @@ export default function Contact() {
       ),
       title: "Email",
       value: "mmardliannurofiq@gmail.com",
-      href: "mailto:mmardliannurofiq@gmail.com?subject=Pertanyaan%20dari%20Website&body=Halo%2C%20saya%20ingin%20bertanya%20tentang%20produk%20ini.%20Terima%20kasih.",
+      href: "mailto:mmardliannurofiq@gmail.com?subject=Pertanyaan%20dari%20Website&body=Halo%2C%20Mardlian%20.",
     },
     {
       icon: (
